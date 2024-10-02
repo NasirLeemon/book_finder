@@ -1,7 +1,7 @@
 
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import lwsLogo from '../assets/lws-logo-en.svg'
+import brocoleeLogo from '../assets/brocolee-logo.png'
 
 const Navigation = () => {
     return (
@@ -9,11 +9,12 @@ const Navigation = () => {
       <div className="container mx-auto flex items-center justify-between gap-x-6 max-w-7xl">
         <a href="/">
           <img
-            className="max-w-[100px] md:max-w-[165px]"
-            src={lwsLogo}
-            alt="Lws"
+            className="max-w-[100px] md:max-w-[160px]"
+            src={brocoleeLogo}
+            alt="BROCOLEE"
           />
         </a>
+        <div className='flex gap-1'>
         <svg
           width="24"
           height="24"
@@ -43,6 +44,37 @@ const Navigation = () => {
             </clipPath>
           </defs>
         </svg>
+        <svg
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M6 6H20L18 14H8L6 6Z"
+    stroke="#1C4336"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+  <circle
+    cx="9"
+    cy="20"
+    r="1.5"
+    stroke="#1C4336"
+    strokeWidth="2"
+  />
+  <circle
+    cx="15"
+    cy="20"
+    r="1.5"
+    stroke="#1C4336"
+    strokeWidth="2"
+  />
+</svg>
+
+        </div>
       </div>
     </nav>
     );
