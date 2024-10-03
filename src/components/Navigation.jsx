@@ -5,7 +5,7 @@ import brocoleeLogo from '../assets/brocolee-logo.png'
 
 const Navigation = () => {
     return (
-        <nav className="py-6 ">
+        <nav className="pt-2 ">
       <div className="container mx-auto flex items-center justify-between gap-x-6 max-w-7xl">
         <a href="/">
           <img
@@ -16,8 +16,8 @@ const Navigation = () => {
         </a>
         <div className='flex gap-1'>
         <svg
-          width="24"
-          height="24"
+          width="30"
+          height="30"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -45,8 +45,8 @@ const Navigation = () => {
           </defs>
         </svg>
         <svg
-  width="24"
-  height="24"
+  width="30"
+  height="30"
   viewBox="0 0 24 24"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ const Navigation = () => {
     stroke="#1C4336"
     strokeWidth="2"
   />
-</svg>
+        </svg>
 
         </div>
       </div>

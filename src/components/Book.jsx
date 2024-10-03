@@ -1,17 +1,29 @@
 /* eslint-disable react/prop-types */
+import { useDispatch } from 'react-redux';
 import starImage from '../assets/star.svg'
+import {addToCartItem } from '../features/cart/cartSlice';
 
 const Book = ({book, handleFavourite}) => {
 
   const {id, name , author, price, rating, image, favourite, publicationYear} = book || {}
 
 
+  const dispatch = useDispatch()
+
+  const handleAddToCart = () => {
+    dispatch(addToCartItem(book))
+  }
+
+
 return (
-        <div className="space-y-3">
+        <div className="space-y-3 ">
           <div
             className="flex items-center justify-center rounded-md border border-[#324251]/30 bg-white p-4"
           >
+            <a href={`/books/${id}`}>
+
             <img className="max-w-[144px] h-[200px] " src={image} alt="book name" />
+            </a>
           </div>
           <div className="space-y-3">
             <h4 className="text-lg font-bold lg:text-xl">{name} ({publicationYear})</h4>
@@ -29,6 +41,7 @@ return (
 
             <div className="flex items-center gap-3 text-xs lg:text-sm">
               <button
+              onClick={handleAddToCart}
                 className="flex min-w-[132px] items-center justify-center gap-1 rounded-md bg-[#1C4336] py-1.5 text-white transition-all hover:opacity-80 lg:py-1.5"
               >
                 <svg

@@ -1,15 +1,14 @@
 /* eslint-disable react/prop-types */
+import { useSelector } from 'react-redux';
 import Book from './Book';
 import Filter from './Filter';
 import SearchBox from './SearchBox';
-import booksData from '../bookData'
-import { useState } from "react"
 
 const Books = () => {
-  const [books, setBooks] = useState(booksData)
+  const books = useSelector(state => state.books.books)
 
   function handleSearch(searchTerm) {
-    const filteredBooks = booksData.filter((book) => book.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    const filteredBooks = books.filter((book) => book.name.toLowerCase().includes(searchTerm.toLowerCase()))
     setBooks(filteredBooks)
   }
 
@@ -55,7 +54,7 @@ const Books = () => {
         <Filter handleSort={handleSort} />
       </div>
       <div
-        className="container mx-auto grid grid-cols-1 gap-8 max-w-7xl md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        className="container mx-auto grid grid-cols-1 gap-10 max-w-7xl md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
       >
         {books?.map(book => <Book key={book?.id} book={book} handleFavourite={handleFavourite} />)}
       </div>
