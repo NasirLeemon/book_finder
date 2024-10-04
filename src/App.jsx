@@ -6,6 +6,9 @@ import { Route, BrowserRouter as Router, Routes} from "react-router-dom"
 import SingleBook from "./components/SingleBook"
 
 
+import Cart from "./components/cart/Cart"
+
+
 function App() {
   return (
     <Router>
@@ -17,7 +20,9 @@ function App() {
       <Routes>
     <Route path="/" element={<Books />} />
     <Route path="/books/:id" element={<SingleBook />} />
+    <Route path="/cart" element={<Cart />} />
     </Routes>
+    
       </main>
       <Footer />
     </div>

@@ -2,6 +2,7 @@
 import { useDispatch } from 'react-redux';
 import starImage from '../assets/star.svg'
 import {addToCartItem } from '../features/cart/cartSlice';
+import { Link } from 'react-router-dom';
 
 const Book = ({book, handleFavourite}) => {
 
@@ -12,6 +13,7 @@ const Book = ({book, handleFavourite}) => {
 
   const handleAddToCart = () => {
     dispatch(addToCartItem(book))
+   
   }
 
 
@@ -20,10 +22,10 @@ return (
           <div
             className="flex items-center justify-center rounded-md border border-[#324251]/30 bg-white p-4"
           >
-            <a href={`/books/${id}`}>
+            <Link to={`/books/${id}`}>
 
             <img className="max-w-[144px] h-[200px] " src={image} alt="book name" />
-            </a>
+            </Link>
           </div>
           <div className="space-y-3">
             <h4 className="text-lg font-bold lg:text-xl">{name} ({publicationYear})</h4>

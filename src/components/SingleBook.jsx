@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { selectedSingleBook, showSingleBook } from '../features/books/bookSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import starImage from '../assets/star.svg'
+import { addToCartItem } from '../features/cart/cartSlice'
 
 const SingleBook = () => {
   const dispatch = useDispatch()
@@ -19,9 +20,11 @@ const SingleBook = () => {
     return <div>Loading...</div>
   }
 
-  const handleAddToCart = () => {
-
-  }
+  
+    const handleAddToCart = () => {
+      dispatch(addToCartItem(book))
+    }
+  
 
 
   return (
