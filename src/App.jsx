@@ -7,6 +7,7 @@ import SingleBook from "./components/SingleBook"
 
 
 import Cart from "./components/cart/Cart"
+import Checkout from "./components/Checkout"
 
 
 function App() {
@@ -16,11 +17,11 @@ function App() {
     >
       <Navigation />
       <main className="my-10 lg:my-14">
-      <Header />
       <Routes>
     <Route path="/" element={<Books />} />
     <Route path="/books/:id" element={<SingleBook />} />
     <Route path="/cart" element={<Cart />} />
+    <Route path="/checkout" element={<Checkout />} />
     </Routes>
     
       </main>

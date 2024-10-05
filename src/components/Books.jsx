@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import Book from './Book';
 import Filter from './Filter';
 import SearchBox from './SearchBox';
+import Header from './Header';
 
 const Books = () => {
   const books = useSelector(state => state.books.books)
@@ -49,6 +50,7 @@ const Books = () => {
 
   return (
     <>
+     <Header />
       <div className='flex items-end justify-between mb-8 lg:mb-10 mx-auto max-w-7xl'>
         <SearchBox onSearch={handleSearch} />
         <Filter handleSort={handleSort} />
