@@ -23,7 +23,7 @@ const SearchBox = ({ onSearch }) => {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}className='mb-2 md:mb-0' >
               <div className="flex">
                 <div
                   className="relative w-full overflow-hidden rounded-lg border-2 border-[#1C4336] text-[#1C4336] md:min-w-[380px] lg:min-w-[440px]"

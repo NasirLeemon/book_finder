@@ -13,7 +13,7 @@ const handleChange = (e) => {
 }
 
     return (
-        <div className="flex items-stretch space-x-3 ">
+        <div className="flex items-stretch space-x-2">
             <select
               className="cursor-pointer rounded-md border px-4 py-2 text-center text-gray-600"
               name="sortBy"

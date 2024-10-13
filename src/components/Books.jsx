@@ -63,7 +63,7 @@ const Books = () => {
   return (
     <>
      <Header />
-      <div className='flex items-end justify-between mb-8 lg:mb-10 mx-auto max-w-7xl'>
+      <div className='md:flex items-center md:items-end md:justify-between mb-8 lg:mb-10 mx-auto max-w-7xl'>
         <SearchBox onSearch={handleSearch} />
         <Filter handleSort={handleSort} />
       </div>
