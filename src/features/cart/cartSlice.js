@@ -6,7 +6,7 @@ const initialState = {
     items: [],
     originalPrice: 0,
     totalPrice: 0,
-    dCharge: 70,
+    dCharge: 48,
 }
 
  const cartSlice = createSlice({

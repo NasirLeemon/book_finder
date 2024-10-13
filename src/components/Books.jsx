@@ -1,18 +1,30 @@
 /* eslint-disable react/prop-types */
-import { useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import Book from './Book';
 import Filter from './Filter';
 import SearchBox from './SearchBox';
 import Header from './Header';
+import { useState } from 'react';
+
+
 
 const Books = () => {
-  const books = useSelector(state => state.books.books)
+  const booksFromState = useSelector(state => state.books.books); 
+  const [books, setBooks] = useState(booksFromState);
+  
+ 
 
   function handleSearch(searchTerm) {
-    const filteredBooks = books.filter((book) => book.name.toLowerCase().includes(searchTerm.toLowerCase()))
-    setBooks(filteredBooks)
+    const filteredBooks = booksFromState.filter(book =>
+      book.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    if (filteredBooks) {
+      setBooks(filteredBooks); 
+    }else{
+      return 'No Books'
+    }
   }
-
+ 
 
   function handleSort(sortInput) {
     let sortedBooks;
@@ -55,11 +67,11 @@ const Books = () => {
         <SearchBox onSearch={handleSearch} />
         <Filter handleSort={handleSort} />
       </div>
-      <div
-        className="container mx-auto grid grid-cols-1 gap-10 max-w-7xl md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+      <
       >
-        {books?.map(book => <Book key={book?.id} book={book} handleFavourite={handleFavourite} />)}
-      </div>
+        {books.length === 0 ? (<div className="text-4xl p-20 bg-white font-bold text-gray-500 text-center"><h1>No Books Found!!</h1></div>) : (<div className="container mx-auto grid grid-cols-1 gap-10 max-w-7xl md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{books?.map(book => <Book key={book?.id} book={book} handleFavourite={handleFavourite} />)}</div>)}
+        
+      </>
     </>
   );
 }

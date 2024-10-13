@@ -4,15 +4,16 @@ import React, { useEffect, useState } from 'react';
 import brocoleeLogo from '../assets/brocolee-logo.png'
 import brocoleebooks from '../assets/broccobooks.png'
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import BellSvg from './svgs/BellSvg';
 import CartSvg from './svgs/CartSvg';
+import { resetFilteredBooks } from '../features/books/bookSlice';
 
 const Navigation = () => {
   const cartItem = useSelector(state => state.cart.items)
   const [showNotification, setShowNotification] = useState(false)
   const [prevCartLength, setPrevCartLength] = useState(cartItem.length)
-
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (cartItem.length > prevCartLength) {
@@ -22,12 +23,13 @@ const Navigation = () => {
       }, 500);
     }
   }, [cartItem.length])
+
   return (
     <nav className="pt-2 ">
       <div className="container mx-auto flex items-center justify-between gap-x-6 max-w-7xl">
         <Link to="/">
           <img
-            className="max-w-[100px] md:max-w-[160px]"
+            className="max-w-[60px] md:max-w-[100px]"
             src={brocoleeLogo}
             alt="Brocolee logo"
           />

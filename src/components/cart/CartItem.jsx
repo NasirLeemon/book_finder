@@ -19,24 +19,24 @@ const CartItem = ({item}) => {
     }
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6 w-full h-full ">
+    <div className="rounded-lg border border-gray-200 bg-mainBg p-4 shadow-sm  md:p-6 w-full h-full ">
     <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
     <a href="#" className="shrink-0 md:order-1">
         <img className="h-20 w-20 dark:hidden" src={item.image} alt="imac image" />
         <img className="hidden h-20 w-20 dark:block" src={item.image} alt="imac image" />
     </a>
 
-    <label htmlFor="counter-input" className="sr-only">Choose quantity:</label>
+    <label htmlFor="counter-input" className="sr-only text-black">Choose quantity:</label>
     <div className="flex items-center justify-between md:order-3 md:justify-end">
         <div className="flex items-center">
-            <button onClick={handleDecrement} type="button" id="decrement-button" data-input-counter-decrement="counter-input" className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100  dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+            <button onClick={handleDecrement} type="button" id="decrement-button" data-input-counter-decrement="counter-input" className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   dark:focus:ring-gray-700">
                 -
             </button>
             <input
     type="text"
     id="counter-input"
     data-input-counter
-    className="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white"
+    className="w-10 shrink-0 border-0 text-black bg-transparent text-center text-sm font-mediumfocus:outline-none focus:ring-0 "
     value={item.quantity} 
     readOnly 
     required
@@ -46,12 +46,12 @@ const CartItem = ({item}) => {
             </button>
         </div>
         <div className="text-end md:order-4 md:w-32">
-            <p className="text-base font-bold text-gray-900 dark:text-white">${(item.price * item.quantity).toFixed(2)}</p>
+            <p className="text-base font-bold text-black ">${(item.price * item.quantity).toFixed(2)}</p>
         </div>
     </div>
 
     <div className="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
-        <a href="#" className="text-base font-medium text-gray-900 hover:underline dark:text-white">{item.name} by {item.author}</a>
+        <a href="#" className="text-base font-medium  hover:underline text-black ">{item.name} by {item.author}</a>
 
         <div className="flex items-center gap-4">
             <button type="button" className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline dark:text-gray-400 dark:hover:text-white">

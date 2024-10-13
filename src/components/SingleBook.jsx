@@ -29,7 +29,7 @@ const SingleBook = () => {
 
   return (
 
-    <div className=" w-full  border  border-gray-200  flex justify-center items-center md:p-5">
+    <div className=" w-full  flex justify-center items-center md:p-10">
       <div className='bg-white flex flex-col md:flex-row md:w-1/2 p-2 md:p-0  rounded-lg shadow'>
         {/* image div */}
         <div className='md:w-1/2 flex justify-center items-center'>

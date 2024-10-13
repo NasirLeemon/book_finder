@@ -1,15 +1,26 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import { resetFilteredBooks, showSearchBooks } from '../features/books/bookSlice';
+import { useDispatch } from 'react-redux';
 
 const SearchBox = ({ onSearch }) => {
     const [searchTerm, setSearchTerm] = useState('')
-
     const handleSubmit = (e) => {
         e.preventDefault()
         onSearch(searchTerm)
-
     }
+    
+    const handleChange = (e) => {
+      const value = e.target.value;
+      setSearchTerm(value);
+      if (value.trim() !== '') {
+        onSearch(value);  
+      } else {
+        onSearch('');
+      }
+    }
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -18,7 +29,7 @@ const SearchBox = ({ onSearch }) => {
                   className="relative w-full overflow-hidden rounded-lg border-2 border-[#1C4336] text-[#1C4336] md:min-w-[380px] lg:min-w-[440px]"
                 >
                   <input
-                    onChange={() => setSearchTerm(event.target.value)}
+                    onChange={handleChange}
                     name='search'
                     value={searchTerm}
                     type="search"

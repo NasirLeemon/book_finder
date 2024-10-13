@@ -7,7 +7,8 @@ import booksData from "../../lib/bookData";
 
 const initialState = {
     books: [...booksData],
-    singleBook: null, 
+    singleBook: null,
+    filteredBooks : [] 
 
 }
 
@@ -19,9 +20,13 @@ const booksSlice = createSlice({
         showSingleBook : (state, action) => {
             const bookId = +action.payload
             state.singleBook = state.books.find(book => book.id === bookId)
-        }
+        },
+        showSearchBooks : (state, action) => {
+            const searchTerm = action.payload
+            state.filteredBooks = state.books.filter((book) => book.name.toLowerCase().includes(searchTerm.toLowerCase()))   
+        },
     }
 })
 export const selectedSingleBook = state => state.books.singleBook
-export const { showSingleBook } = booksSlice.actions
+export const { showSingleBook,showSearchBooks,resetFilteredBooks } = booksSlice.actions
 export default booksSlice.reducer
